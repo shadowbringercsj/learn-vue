@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>basic use of v-bind</title>
+</head>
+<style>
+    .red{
+        background: black;
+    }
+</style>
+<body>
+    <div id="app" v-bind:class="{red:boolean_change_color}">
+        <a v-bind:href="url">bilibili</a>
+        <button v-on:click="change_color">change color</button>
+        <h1 v-bind:class="[a,b]"></h1>
+        <h1 v-bind:class="getClasses()"></h1>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            url: 'www.bilibili.com',
+            boolean_change_color: true,
+            a: 'aaaa',
+            b: 'bbbb'
+        },
+        methods: {
+            change_color:function () {
+                this.boolean_change_color = !this.boolean_change_color;
+            },
+            getClasses:function () {
+                return [this.a,this.b];
+            }
+        }
+    })
+</script>
+</html>

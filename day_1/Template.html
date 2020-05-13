@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+</head>
+<body>
+   <h1 id = "app">{{firstName + '·' + middleName + '·' + lastName}}</h1>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            firstName: '蒙奇',
+            middleName: 'D',
+            lastName: '路飞',
+        }
+    })
+</script>
+</html>

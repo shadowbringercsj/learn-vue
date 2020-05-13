@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V_one</title>
+</head>
+<body>
+    <div id= "app">
+        <h2>{{message}}</h2>
+        <h2 v-once>{{message}}</h2>
+        <button @click="changed_message">{{button_message}}</button>
+    </div>
+</body>
+<script src = "../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+            message: '扣你吉瓦',
+            changed_message_value: '哦里哈啥哟',
+            button_message: 'change message'
+        },
+        methods: {
+            changed_message:function(){
+                this.message = this.changed_message_value;
+            }
+        }
+    })
+</script>
+</html>

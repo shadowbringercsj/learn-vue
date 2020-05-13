@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+    <h2>{{method_fullName()}}</h2>
+    <h2>{{method_fullName()}}</h2>
+    <h2>{{method_fullName()}}</h2>
+
+    <h2>{{computed_fullName}}</h2>
+    <h2>{{computed_fullName}}</h2>
+    <h2>{{computed_fullName}}</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            firstName: "sj",
+            lastName: "c"
+        },
+        methods:{
+            method_fullName: function () {
+                console.log('method_fullName');
+                return this.lastName + this.firstName;
+
+            }
+        },
+        computed: {
+            computed_fullName: function () {
+                console.log('computed_fullName');
+                return this.lastName + this.firstName;
+
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWork</title>
+</head>
+<style>
+    .black{
+        background: black;
+    }
+</style>
+<body>
+    <div id="app">
+        <ul>
+            <li v-bind:class="{black:isBlack == index}" v-for="c in arr" @click="click_index()"></li>
+        </ul>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue ({
+        el: '#app',
+        data: {
+            isBlack: null,
+            arr: ['one piece', 'break sky', '超兽武装'],
+        },
+        methods: {
+            click_index:function () {
+                this.isBlack = index;
+            }
+        }
+    })
+</script>
+</html>
