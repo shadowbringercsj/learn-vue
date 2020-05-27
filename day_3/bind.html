@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test v-bind</title>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:title="message">111</a>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '1sss'
+        },
+        methods: {
+            test_v_bind: function () {
+
+            }
+        }
+    });
+</script>
+</html>

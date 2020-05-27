@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <test v-for="item in items" v-bind:test="item"></test>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    Vue.component('test', {
+        props: ['test'],
+        template: '<li>{{test}}</li>'
+    });
+    const app = new Vue({
+        el: '#app',
+        data: {
+            items: ['1', '2', '3']
+        }
+    });
+</script>
+</html>

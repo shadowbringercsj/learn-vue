@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        {{request.name}}
+    </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            request: {
+                name: null,
+                age: 0
+            }
+        },
+        mounted() {
+            axios.get('test.json').then(response => (this.request = response.data));
+        }
+    });
+</script>
+</html>
